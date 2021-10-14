@@ -1,0 +1,30 @@
+.bgimg
+{
+    background-color:gainsboro;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+.carousel-inner{
+    width:100%;
+    max-height: 500px !important;
+
+  }
+  .nav2 ul a
+  {
+      color: black;
+  }
+  .nav2 :hover
+  {
+      color: blue;
+  }
+  .embd
+  {
+    width:400px;
+    height:400px;
+  }
+  .pimg
+  {
+      background-color: white;
+  }

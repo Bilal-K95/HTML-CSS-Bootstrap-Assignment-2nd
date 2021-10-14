@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <h3 class=" container text-center bg-success">REGISTRATION FORM</h3>
+    <div class="container bg-light">
+
+        <form class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="validationCustom01">First name:</label>
+                <input type="text" class="form-control" id="validationCustom01" required autocomplete="off">
+                <span id="fname" class="text-danger font-weight-bold"></span>
+                <span id="fname1" class="text-success font-weight-bold"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="validationCustom02">Last name:</label>
+                <input type="text" class="form-control" id="validationCustom02" required autocomplete="off">
+                <span id="lname" class="text-danger font-weight-bold"></span>
+                <span id="lname1" class="text-success font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="validationCustom03">City</label>
+                <input type="text" class="form-control" id="validationCustom03" required autocomplete="off">
+                <span id="city" class="text-danger font-weight-bold"></span>
+                <span id="city1" class="text-success font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="validationCustom04">State</label>
+                <select class="custom-select" id="validationCustom04" required autocomplete="off">
+                    <option selected disabled value="">Choose...</option>
+                    <option>Maharashtra</option>
+                    <option>Telangana</option>
+                    <option>uttar pradesh</option>
+                    <option>Madhya pradesh</option>
+                    <option>Andhra pradesh</option>
+                    <option>tamil nadu</option>
+                    <option>Kerela</option>
+                    <option>Jhammu</option>
+                    <option>Kashmir</option>
+                </select>
+                <span id="state" class="text-danger font-weight-bold"></span>
+                <span id="state1" class="text-success font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="validationCustom05">Contact</label>
+                <input type="text" class="form-control" id="validationCustom05" required autocomplete="off">
+                <span id="contact" class="text-danger font-weight-bold"></span>
+                <span id="contact1" class="text-success font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="validationCustom06">Email</label>
+                <input type="text" class="form-control" id="validationCustom06" required autocomplete="off">
+                <span id="email" class="text-danger font-weight-bold"></span>
+                <span id="email1" class="text-success font-weight-bold"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="validationCustom07">Pin code</label>
+                <input type="text" class="form-control" id="validationCustom07" required autocomplete="off">
+                <span id="pin" class="text-danger font-weight-bold"></span>
+                <span id="pin1" class="text-success font-weight-bold"></span>
+            </div>
+
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required
+                        autocomplete="off">
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="Submit1()">Submit form</button>
+        </form>
+
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+            function Submit1() {
+                var name = document.getElementById("validationCustom01").value;
+                var lastname = document.getElementById("validationCustom02").value;
+                var city = document.getElementById("validationCustom03").value;
+                var state = document.getElementById("validationCustom04").value;
+                var phoneno = document.getElementById("validationCustom05").value;
+                var emailid = document.getElementById("validationCustom06").value;
+                var zipcode = document.getElementById("validationCustom07").value;
+
+                var expName = /^[a-zA-Z]{2,100}$/;
+                var expMobile = /^[6-9][0-9]{9}$/;
+                var emailReg = /^[a-zA-Z-0-9]+@+ $/;
+
+                if (name == "") {
+
+                    document.getElementById('fname').innerHTML = "please fill first name field";
+                    return false;
+                }
+                else if (!(expName.test(name))) {
+                    document.getElementById('fname').innerHTML = "Only Alphabhet required";
+                    return false;
+                }
+                else {
+                    document.getElementById('fname1').innerHTML = "look good";
+                }
+
+
+
+                if (lastname == "") {
+
+                    document.getElementById('lname').innerHTML = "please fill last name field";
+                    return false;
+                }
+                else if (!(expName.test(lastname))) {
+                    document.getElementById('lname').innerHTML = "Only Alphabhet required";
+
+                }
+                else {
+                    document.getElementById('lname1').innerHTML = "look good";
+                }
+
+
+
+                if (city == "") {
+
+                    document.getElementById('city').innerHTML = "please fill city name field";
+                    return false;
+                }
+                else {
+
+                    document.getElementById('city1').innerHTML = "look good";
+                }
+
+
+
+                if (state == "") {
+
+                    document.getElementById('state').innerHTML = "please select the state field";
+                    return false;
+                }
+                else {
+
+                    document.getElementById('state1').innerHTML = "look good";
+                }
+
+
+
+
+                if (phoneno == "") {
+
+                    document.getElementById('contact').innerHTML = "please enter the phone no";
+                    return false;
+                }
+                else if (!(expMobile.test(phoneno))) {
+                    document.getElementById('contact').innerHTML = "Only number required";
+                }
+                else {
+
+                    document.getElementById('contact1').innerHTML = "look good";
+                }
+
+
+
+                if (zipcode == "") {
+
+                    document.getElementById('pin').innerHTML = "please enter the pin no";
+                    return false;
+                }
+                else if (!(expMobile.test(zipcode))) {
+                    document.getElementById('pin').innerHTML = "Only number required";
+                }
+                else {
+                    document.getElementById('pin1').innerHTML = "look good";
+                }
+
+
+
+                if (emailid == "") {
+
+                    document.getElementById('email').innerHTML = "please enter the Email id";
+                    return false;
+                }
+                else if (!(emailReg.test(emailid))) {
+                    document.getElementById('email').innerHTML = "Only number required";
+                }
+                else {
+                    document.getElementById('email1').innerHTML = "look good";
+                }
+
+
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>
